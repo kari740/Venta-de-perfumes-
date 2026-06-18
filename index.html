@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bagués Cosmética Premium - Karina Flores</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{
+font-family:'Segoe UI',sans-serif;
+background:linear-gradient(180deg,#c1007e,#d91c93,#f062b7,#ffd8ef);
+color:white;
+overflow-x:hidden;
+}
+.sidebar{
+height:100%;width:0;position:fixed;z-index:1000;top:0;left:0;
+background:#8b0057;overflow-x:hidden;transition:.5s;padding-top:60px;
+}
+.sidebar a{padding:15px 25px;display:block;color:white;text-decoration:none}
+.sidebar a:hover{background:#b10072}
+.menu{position:fixed;top:15px;left:15px;font-size:34px;cursor:pointer;z-index:1001}
+.hero{
+min-height:100vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
+padding:20px;
+}
+.hero h1{
+font-size:4rem;
+text-shadow:0 0 20px rgba(255,255,255,.7);
+animation:float 3s infinite ease-in-out;
+}
+.hero p{max-width:700px;font-size:1.2rem}
+@keyframes float{50%{transform:translateY(-12px)}}
+.card{
+background:rgba(255,255,255,.12);
+backdrop-filter:blur(10px);
+margin:25px auto;
+padding:25px;
+border-radius:25px;
+width:90%;
+max-width:1000px;
+box-shadow:0 10px 30px rgba(0,0,0,.2);
+}
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:20px;
+margin-top:20px;
+}
+.product{
+background:rgba(255,255,255,.15);
+padding:20px;
+border-radius:20px;
+}
+.btn{
+display:inline-block;
+margin:10px;
+padding:14px 24px;
+background:white;
+color:#c1007e;
+text-decoration:none;
+font-weight:bold;
+border-radius:50px;
+}
+.float-item{
+position:fixed;
+font-size:30px;
+animation:fall 12s linear infinite;
+opacity:.8;
+}
+@keyframes fall{
+from{transform:translateY(-100px)}
+to{transform:translateY(110vh)}
+}
+footer{
+padding:40px;
+text-align:center;
+}
+</style>
+</head>
+<body>
+
+<div class="menu" onclick="document.getElementById('menu').style.width='280px'">☰</div>
+
+<div id="menu" class="sidebar">
+<a href="javascript:void(0)" onclick="document.getElementById('menu').style.width='0'">✖ Cerrar</a>
+<a href="#productos">Cosméticos</a>
+<a href="#productos">Perfumes Femeninos</a>
+<a href="#productos">Perfumes Masculinos</a>
+<a href="#promo">Promociones</a>
+<a href="#contacto">Contacto</a>
+</div>
+
+<section class="hero">
+<h1>BAGUÉS COSMÉTICA</h1>
+<p>Descubrí perfumes, cosméticos y productos de belleza para realzar tu estilo. Calidad, elegancia y atención personalizada.</p>
+<br>
+<a class="btn" href="https://wa.me/543704712930">Comprar Ahora</a>
+</section>
+
+<div class="card" id="productos">
+<h2>✨ Productos Destacados</h2>
+<div class="grid">
+<div class="product">💄 Maquillaje Profesional</div>
+<div class="product">🌸 Perfumes Femeninos</div>
+<div class="product">🕶️ Perfumes Masculinos</div>
+<div class="product">🧴 Cuidado Facial</div>
+</div>
+</div>
+
+<div class="card" id="promo">
+<h2>🎁 Promociones Especiales</h2>
+<p>Comprando 3 productos o más accedés a descuentos exclusivos y regalos sorpresa.</p>
+</div>
+
+<div class="card">
+<h2>💳 Medios de Pago</h2>
+<p>Transferencia • QR • Efectivo • Tarjeta de Crédito</p>
+</div>
+
+<div class="card">
+<h2>😂 Chistes para alegrarte el día</h2>
+<p>¿Por qué el perfume fue a la escuela? Porque quería tener más esencia.</p>
+<p>¿Qué le dijo el labial al espejo? ¡Hoy brillamos!</p>
+</div>
+
+<div class="card">
+<h2>🍓 Recetas Fáciles de Belleza</h2>
+<p>Mascarilla de miel y yogur durante 15 minutos.</p>
+<p>Pepino fresco sobre los ojos durante 10 minutos.</p>
+</div>
+
+<div class="card" id="contacto">
+<h2>📱 Redes Sociales</h2>
+<a class="btn" href="https://www.facebook.com/kari.flores.754?mibextid=ZbWKwL">Facebook</a>
+<a class="btn" href="https://instagram.com/kariin_39f">Instagram</a>
+<a class="btn" href="https://wa.me/543704712930">WhatsApp</a>
+</div>
+
+<footer>
+<h2>🌷 Comunicate con tu vendedora de confianza</h2>
+<h1>Karina Flores</h1>
+</footer>
+
+<script>
+const items=['💖','💄','🌸','🧴'];
+for(let i=0;i<35;i++){
+let e=document.createElement('div');
+e.className='float-item';
+e.innerHTML=items[Math.floor(Math.random()*items.length)];
+e.style.left=Math.random()*100+'vw';
+e.style.animationDelay=Math.random()*12+'s';
+document.body.appendChild(e);
+}
+</script>
+</body>
+</html>
